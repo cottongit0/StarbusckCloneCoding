@@ -1,8 +1,10 @@
 $main-font: #333;
 $main-green: #669900;
+$main-white: #f6f5f0;
 
 $sub-grey: #656565;
 $bright-grey: #e5e5e5;
+$darker-grey: #2c2a29;
 
 $real-black: #000;
 $real-white: #fff;
@@ -21,19 +23,19 @@ body {
   a {
     text-decoration: none;
   }
+  .inner {
+    position: relative;
+    width: 1100px;
+    margin: 0 auto;
+  }
 }
 
 // HEADER
 header {
-  position: relative;
-  background-color: royalblue;
-
+  background-color: $main-white;
+  border-bottom: 1px solid #c8c8c8;
   .inner {
-    position: relative;
-    width: 1100px;
     height: 120px;
-    margin: 0 auto;
-    background-color: orange;
 
     // logo
     .logo {
@@ -44,7 +46,7 @@ header {
       margin: auto;
     }
 
-    // submenu
+    // sub-menu
     .sub-menu {
       position: absolute;
       top: 10px;
@@ -111,6 +113,51 @@ header {
         &.focused {
           .material-icons {
             opacity: 0;
+          }
+        }
+      }
+    }
+
+    // main-menu
+    .main-menu {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      display: flex;
+      .item {
+        .item__name {
+          text-transform: uppercase;
+          padding: 10px 20px 34px 20px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 0.813em;
+        }
+        .item__contents {
+          width: 100%;
+          position: fixed;
+          left: 0;
+          display: none;
+          .contents__menu {
+            background-color: red;
+            height: 200px;
+          }
+          .contents__texture {
+            background-color: orange;
+            height: 100px;
+          }
+        }
+        &:hover {
+          .item__name {
+            background-color: $darker-grey;
+            color: $main-green;
+            border-radius: 6px 6px 0 0;
+          }
+          .item__contents {
+            display: block;
+            .contents__menu {
+            }
+            .contents__texture {
+            }
           }
         }
       }
