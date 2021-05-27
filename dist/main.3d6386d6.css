@@ -275,5 +275,8 @@ header .badges .badge {
   bottom: 0px;
   right: 275px;
 }
+.visual .fade-in {
+  opacity: 0;
+}
 
 /*# sourceMappingURL=/main.3d6386d6.css.map */

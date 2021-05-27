@@ -24898,7 +24898,15 @@ window.addEventListener("scroll", _lodash.default.throttle(function () {
       display: "block"
     });
   }
-}, 300));
+}, 300)); // Visual
+
+var fadeEls = document.querySelectorAll(".visual .fade-in");
+fadeEls.forEach(function (fadeEl, index) {
+  _gsap.gsap.to(fadeEl, 1, {
+    delay: (index + 1) * 0.7,
+    opacity: 1
+  });
+});
 },{"lodash":"node_modules/lodash/lodash.js","gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
