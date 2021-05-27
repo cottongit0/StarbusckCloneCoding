@@ -17,6 +17,8 @@ body {
   line-height: 1.4;
   font-family: "Nanum Gothic", sans-serif;
 
+  height: 3000px;
+
   img {
     display: block;
   }
@@ -32,8 +34,12 @@ body {
 
 // HEADER
 header {
+  position: fixed;
   background-color: $main-white;
   border-bottom: 1px solid #c8c8c8;
+  top: 0;
+  width: 100%;
+
   .inner {
     height: 120px;
 
@@ -161,6 +167,20 @@ header {
           }
         }
       }
+    }
+  }
+
+  // badge
+  .badges {
+    position: absolute;
+    top: 132px;
+    right: 12px;
+    .badge {
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      box-shadow: 4px 4px 10px rgba($color: $real-black, $alpha: 0.15);
+      cursor: pointer;
     }
   }
 }

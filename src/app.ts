@@ -1,3 +1,6 @@
+import _ from "lodash";
+import { gsap } from "gsap";
+
 const searchEl = document.querySelector(".search")! as HTMLElement;
 const serchInputEl = searchEl.querySelector("input")! as HTMLInputElement;
 
@@ -12,3 +15,22 @@ serchInputEl.addEventListener("blur", () => {
   searchEl.classList.remove("focused");
   serchInputEl.setAttribute("placeholder", "");
 });
+
+const badgeEl = document.querySelector(".badges")! as HTMLElement;
+
+window.addEventListener(
+  "scroll",
+  _.throttle(function () {
+    if (window.scrollY > 500) {
+      gsap.to(badgeEl, 0.6, {
+        opacity: 0,
+        display: "none",
+      });
+    } else {
+      gsap.to(badgeEl, 0.6, {
+        opacity: 1,
+        display: "block",
+      });
+    }
+  }, 300)
+);
