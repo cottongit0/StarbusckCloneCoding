@@ -319,6 +319,9 @@ header .badges .badge {
   flex-grow: 1;
   height: 62px;
 }
+.notice .notice-line .inner .inner__left .swiper-container .swiper-slide a {
+  color: #fff;
+}
 .notice .notice-line .inner .inner__left .notice-line__more {
   display: flex;
   width: 62px;

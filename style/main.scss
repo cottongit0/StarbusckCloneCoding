@@ -379,6 +379,11 @@ header {
         .swiper-container {
           flex-grow: 1;
           height: 62px;
+          .swiper-slide {
+            a {
+              color: $real-white;
+            }
+          }
         }
         .notice-line__more {
           display: flex;
