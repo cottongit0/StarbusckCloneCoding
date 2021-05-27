@@ -1,6 +1,7 @@
 import _ from "lodash";
 import { gsap } from "gsap";
 
+// Search
 const searchEl = document.querySelector(".search")! as HTMLElement;
 const serchInputEl = searchEl.querySelector("input")! as HTMLInputElement;
 
@@ -16,6 +17,7 @@ serchInputEl.addEventListener("blur", () => {
   serchInputEl.setAttribute("placeholder", "");
 });
 
+// Badge
 const badgeEl = document.querySelector(".badges")! as HTMLElement;
 
 window.addEventListener(
