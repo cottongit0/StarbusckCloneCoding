@@ -1,6 +1,6 @@
-import _ from "lodash";
+import * as _ from "lodash";
 import { gsap } from "gsap";
-import { Swiper, SwiperOptions } from "swiper";
+// import { Swiper, SwiperOptions } from "swiper";
 
 // Search
 const searchEl = document.querySelector(".search")! as HTMLElement;
@@ -46,11 +46,3 @@ fadeEls.forEach(function (fadeEl, index: number) {
     opacity: 1,
   });
 });
-
-// Notice
-const swiperVertical: SwiperOptions = {
-  loop: true,
-  autoplay: true,
-  direction: "vertical",
-};
-new Swiper(".notice-line .swiper-container", swiperVertical);

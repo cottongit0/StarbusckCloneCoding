@@ -379,7 +379,12 @@ header {
         .swiper-container {
           flex-grow: 1;
           height: 62px;
+
           .swiper-slide {
+            height: 62px;
+            display: flex;
+            align-items: center;
+
             a {
               color: $real-white;
             }
