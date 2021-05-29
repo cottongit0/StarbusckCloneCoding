@@ -1,5 +1,6 @@
 import * as _ from "lodash";
 import { gsap } from "gsap";
+import Swiper from "swiper";
 // import { Swiper, SwiperOptions } from "swiper";
 
 // Search

@@ -107,7 +107,7 @@ header {
   border-bottom: 1px solid #c8c8c8;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
 
   > .inner {
     height: 120px;
@@ -342,6 +342,7 @@ header {
 
 // NOTICE
 .notice {
+  // notice
   .notice-line {
     position: relative;
     .bg-left {
@@ -379,12 +380,10 @@ header {
         .swiper-container {
           flex-grow: 1;
           height: 62px;
-
           .swiper-slide {
             height: 62px;
             display: flex;
             align-items: center;
-
             a {
               color: $real-white;
             }
@@ -425,6 +424,87 @@ header {
           }
         }
       }
+    }
+  }
+
+  // promotion
+  .promotion {
+    position: relative;
+    height: 693px;
+    background-color: $main-white;
+
+    .swiper-container {
+      width: calc(819px * 3 + 20px);
+      height: 553px;
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      margin-left: calc((819px * 3 + 20px) / -2);
+    }
+
+    .swiper-slide {
+      position: relative;
+      opacity: 0.5;
+      transition: opacity 1s;
+
+      .btn {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+    .swiper-slide-active {
+      opacity: 1;
+    }
+
+    .swiper-pagination {
+      bottom: 40px;
+      left: 0;
+      right: 0;
+      .swiper-pagination-bullet {
+        background-color: transparent;
+        background-image: url("../images/promotion_slide_pager.png");
+        width: 12px;
+        height: 12px;
+        margin-right: 6px;
+        outline: none;
+        &:last-child {
+          margin-right: 0px;
+        }
+        &.swiper-pagination-bullet-active {
+          background-image: url("../images/promotion_slide_pager_on.png");
+        }
+      }
+    }
+    .swiper-prev,
+    .swiper-next {
+      width: 42px;
+      height: 42px;
+      border: 2px solid $main-font;
+      border-radius: 50%;
+      position: absolute;
+      top: 300px;
+      z-index: 10;
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.4s;
+      &:hover {
+        background-color: $main-font;
+        color: $real-white;
+      }
+    }
+    .swiper-prev {
+      left: 50%;
+      margin-left: -480px;
+    }
+    .swiper-next {
+      right: 50%;
+      margin-right: -480px;
     }
   }
 }
