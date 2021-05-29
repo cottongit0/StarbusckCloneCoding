@@ -41,9 +41,25 @@ window.addEventListener(
 
 // Visual
 const fadeEls = document.querySelectorAll<HTMLElement>(".visual .fade-in");
-fadeEls.forEach(function (fadeEl, index: number) {
+fadeEls.forEach((fadeEl, index: number) => {
   gsap.to(fadeEl, 1, {
     delay: (index + 1) * 0.7,
     opacity: 1,
   });
+});
+
+// toggle
+const promotionEl = document.querySelector(".promotion")! as HTMLDivElement;
+const promotionToggleBtn = document.querySelector(
+  ".toggle-promotion"
+)! as HTMLDivElement;
+let isHidePromotion: boolean = false;
+
+promotionToggleBtn.addEventListener("click", () => {
+  isHidePromotion = !isHidePromotion;
+  if (isHidePromotion) {
+    promotionEl.classList.add("hide");
+  } else {
+    promotionEl.classList.remove("hide");
+  }
 });

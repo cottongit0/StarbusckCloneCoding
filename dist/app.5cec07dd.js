@@ -24909,6 +24909,19 @@ fadeEls.forEach(function (fadeEl, index) {
     delay: (index + 1) * 0.7,
     opacity: 1
   });
+}); // toggle
+
+var promotionEl = document.querySelector(".promotion");
+var promotionToggleBtn = document.querySelector(".toggle-promotion");
+var isHidePromotion = false;
+promotionToggleBtn.addEventListener("click", function () {
+  isHidePromotion = !isHidePromotion;
+
+  if (isHidePromotion) {
+    promotionEl.classList.add("hide");
+  } else {
+    promotionEl.classList.remove("hide");
+  }
 });
 },{"lodash":"node_modules/lodash/lodash.js","gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

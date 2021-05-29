@@ -432,6 +432,11 @@ header {
     position: relative;
     height: 693px;
     background-color: $main-white;
+    transition: height 0.4s;
+    overflow: hidden;
+    &.hide {
+      height: 0;
+    }
 
     .swiper-container {
       width: calc(819px * 3 + 20px);
