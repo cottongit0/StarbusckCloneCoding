@@ -603,5 +603,50 @@ header .badges .badge {
 .pick-your-favorite .inner .text-group .description {
   margin-bottom: 40px;
 }
+.reserve-store {
+  background-image: url("/reserve_store_bg.d8944045.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.reserve-store .inner {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reserve-store .inner .medal {
+  width: 334px;
+  height: 334px;
+  perspective: 600px;
+}
+.reserve-store .inner .medal .front,
+.reserve-store .inner .medal .back {
+  width: 334px;
+  height: 334px;
+  backface-visibility: hidden;
+  transition: 1s;
+  position: absolute;
+}
+.reserve-store .inner .medal .front {
+  transform: rotateY(0deg);
+}
+.reserve-store .inner .medal .back {
+  transform: rotateY(-180deg);
+}
+.reserve-store .inner .medal .back .btn {
+  position: absolute;
+  top: 240px;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.reserve-store .inner .medal:hover .front {
+  transform: rotateY(180deg);
+}
+.reserve-store .inner .medal:hover .back {
+  transform: rotateY(0deg);
+}
 
 /*# sourceMappingURL=/main.3d6386d6.css.map */

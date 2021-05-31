@@ -12,6 +12,15 @@ $darker-grey: #2c2a29;
 $real-black: #000;
 $real-white: #fff;
 
+@mixin backgroundSet() {
+  background: {
+    repeat: no-repeat;
+    position: center;
+    attachment: fixed;
+    size: cover;
+  }
+}
+
 // COMMON
 body {
   color: $main-font;
@@ -691,10 +700,7 @@ header {
 // PICK YOUR FAVORITE
 .pick-your-favorite {
   background-image: url("../images/favorite_bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
+  @include backgroundSet();
   .inner {
     padding: 110px 0;
     .text-group {
@@ -712,6 +718,53 @@ header {
 
       .more {
         .btn {
+        }
+      }
+    }
+  }
+}
+
+// RESERVE STORE
+.reserve-store {
+  background-image: url("../images/reserve_store_bg.jpg");
+  @include backgroundSet();
+  .inner {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .medal {
+      width: 334px;
+      height: 334px;
+      perspective: 600px;
+      .front,
+      .back {
+        width: 334px;
+        height: 334px;
+        backface-visibility: hidden;
+        transition: 1s;
+        position: absolute;
+      }
+      .front {
+        transform: rotateY(0deg);
+      }
+      .back {
+        transform: rotateY(-180deg);
+        .btn {
+          position: absolute;
+          top: 240px;
+          right: 0;
+          left: 0;
+          margin: auto;
+        }
+      }
+      &:hover {
+        .front {
+          transform: rotateY(180deg);
+        }
+        .back {
+          transform: rotateY(0deg);
         }
       }
     }
