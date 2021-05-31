@@ -80,7 +80,8 @@ body {
   // gold
   &.btn--gold {
     color: $btn-gold;
-    background-color: $btn-gold;
+    background-color: transparent;
+    border: 1px solid $btn-gold;
     &:hover {
       color: $btn-white;
       background-color: $btn-gold;
@@ -652,6 +653,37 @@ header {
         .btn {
         }
       }
+    }
+  }
+}
+
+// RESERVE COFFEE
+.reserve-coffee {
+  background-image: url("../images/reserve_bg.jpg");
+  .inner {
+    height: 400px;
+    .reserve-logo {
+      position: absolute;
+      top: 110px;
+      left: 0;
+    }
+
+    .text-group {
+      position: absolute;
+      top: 124px;
+      left: 208px;
+      .description {
+        .more {
+          .btn {
+          }
+        }
+      }
+    }
+
+    .product {
+      position: absolute;
+      top: 0;
+      right: 0;
     }
   }
 }
