@@ -513,3 +513,54 @@ header {
     }
   }
 }
+
+// REWARDS
+.rewards {
+  $left-color: #272727;
+  $right-color: #d5c798;
+
+  position: relative;
+
+  .inner {
+    background-image: url("../images/rewards.jpg");
+    height: 241px;
+
+    .btn-group {
+      position: absolute;
+      bottom: 24px;
+      right: 0;
+      width: 250px;
+      display: flex;
+      flex-wrap: wrap;
+      .btn {
+        &.sign-up {
+          margin-right: 10px;
+        }
+        &.sign-in {
+          width: 110px;
+        }
+        &.gift {
+          margin-top: 10px;
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+
+  .bg-left {
+    width: 50%;
+    height: 100%;
+    background-color: $left-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .bg-right {
+    width: 50%;
+    height: 100%;
+    background-color: $right-color;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
