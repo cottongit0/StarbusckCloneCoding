@@ -1,7 +1,6 @@
 import _ from "lodash";
 import gsap from "gsap";
-// import Swiper from "swiper";
-// import { Swiper, SwiperOptions } from "swiper";
+import { CSSSelector } from "swiper/types/shared";
 
 // Search
 const searchEl = document.querySelector(".search")! as HTMLElement;
@@ -63,3 +62,22 @@ promotionToggleBtn.addEventListener("click", () => {
     promotionEl.classList.remove("hide");
   }
 });
+
+// youtube - icons
+
+function random(min: number, max: number): number {
+  return parseFloat(Math.random() * (max - min) + min.toFixed(2));
+}
+
+function floatingObject(selector: CSSSelector, delay: number, size: number) {
+  gsap.to(selector, random(1.5, 2.5), {
+    y: size,
+    repeat: -1,
+    yoyo: true,
+    ease: Power1.easeInOut,
+    delay: random(0, delay),
+  });
+}
+floatingObject(".floating1", 1, 15);
+floatingObject(".floating2", 0.5, 15);
+floatingObject(".floating3", 1.5, 20);

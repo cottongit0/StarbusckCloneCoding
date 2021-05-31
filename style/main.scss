@@ -571,6 +571,8 @@ header {
   height: 700px;
   background-color: $main-font;
   overflow: hidden;
+
+  // video
   .youtube__area {
     position: absolute;
     width: 1920px;
@@ -604,5 +606,28 @@ header {
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  // icons
+  .inner {
+    height: 700px;
+
+    .floating {
+      &.floating1 {
+        position: absolute;
+        top: 50px;
+        left: 0;
+      }
+      &.floating2 {
+        position: absolute;
+        top: 350px;
+        left: 150px;
+      }
+      &.floating3 {
+        position: absolute;
+        bottom: -200px;
+        right: 0;
+      }
+    }
   }
 }
