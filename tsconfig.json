@@ -72,5 +72,6 @@
   "files": [
     "node_modules/gsap/types/index.d.ts",
     "node_modules/youtube-iframe/index.d.ts",
+    "node_modules/swiper/swiper.d.ts"
   ]
 }

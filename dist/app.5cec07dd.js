@@ -24861,59 +24861,7 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 exports.TweenMax = TweenMaxWithCSS;
 exports.default = exports.gsap = gsapWithCSS;
-},{"./gsap-core.js":"node_modules/gsap/gsap-core.js","./CSSPlugin.js":"node_modules/gsap/CSSPlugin.js"}],"node_modules/youtube-iframe/index.js":[function(require,module,exports) {
-(function(window) {
-	var YouTubeIframeLoader = {
-		src: 'https://www.youtube.com/iframe_api',
-		loading: false,
-		loaded: false,
-		listeners: [],
-
-		load: function(callback) {
-			var _this = this;
-			this.listeners.push(callback);
-
-			if(this.loaded) {
-				setTimeout(function() {
-					_this.done();
-				});
-				return;
-			}
-
-			if(this.loading) {
-				return;
-			}
-
-			this.loading = true;
-
-			window.onYouTubeIframeAPIReady = function() {
-				_this.loaded = true;
-				_this.done();
-			};
-
-			var script = document.createElement('script');
-			script.type = 'text/javascript';
-			script.src = this.src;
-			document.body.appendChild(script);
-		},
-
-		done: function() {
-			delete window.onYouTubeIframeAPIReady;
-
-			while(this.listeners.length) {
-				this.listeners.pop()(window.YT);
-			}
-		}
-	};
-
-	if(typeof module !== 'undefined' && module.exports) {
-		module.exports = YouTubeIframeLoader;
-	} else {
-		window.YouTubeIframeLoader = YouTubeIframeLoader;
-	}
-}(window));
-
-},{}],"src/app.ts":[function(require,module,exports) {
+},{"./gsap-core.js":"node_modules/gsap/gsap-core.js","./CSSPlugin.js":"node_modules/gsap/CSSPlugin.js"}],"src/app.ts":[function(require,module,exports) {
 "use strict";
 
 var _lodash = _interopRequireDefault(require("lodash"));
@@ -24973,26 +24921,8 @@ promotionToggleBtn.addEventListener("click", function () {
   } else {
     promotionEl.classList.remove("hide");
   }
-}); // Youtube
-
-var YouTubeIframeLoader = require("youtube-iframe");
-
-YouTubeIframeLoader.load(function (YT) {
-  new YT.Player("player", {
-    videoId: "An6LvWQuj_8",
-    playerVars: {
-      autoplay: true,
-      loop: true,
-      playlist: "An6LvWQuj_8"
-    },
-    events: {
-      onReady: function onReady(event) {
-        event.target.mute();
-      }
-    }
-  });
 });
-},{"lodash":"node_modules/lodash/lodash.js","gsap":"node_modules/gsap/index.js","youtube-iframe":"node_modules/youtube-iframe/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"lodash":"node_modules/lodash/lodash.js","gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
