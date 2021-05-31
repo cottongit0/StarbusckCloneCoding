@@ -24861,17 +24861,68 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 exports.TweenMax = TweenMaxWithCSS;
 exports.default = exports.gsap = gsapWithCSS;
-},{"./gsap-core.js":"node_modules/gsap/gsap-core.js","./CSSPlugin.js":"node_modules/gsap/CSSPlugin.js"}],"src/app.ts":[function(require,module,exports) {
+},{"./gsap-core.js":"node_modules/gsap/gsap-core.js","./CSSPlugin.js":"node_modules/gsap/CSSPlugin.js"}],"node_modules/youtube-iframe/index.js":[function(require,module,exports) {
+(function(window) {
+	var YouTubeIframeLoader = {
+		src: 'https://www.youtube.com/iframe_api',
+		loading: false,
+		loaded: false,
+		listeners: [],
+
+		load: function(callback) {
+			var _this = this;
+			this.listeners.push(callback);
+
+			if(this.loaded) {
+				setTimeout(function() {
+					_this.done();
+				});
+				return;
+			}
+
+			if(this.loading) {
+				return;
+			}
+
+			this.loading = true;
+
+			window.onYouTubeIframeAPIReady = function() {
+				_this.loaded = true;
+				_this.done();
+			};
+
+			var script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.src = this.src;
+			document.body.appendChild(script);
+		},
+
+		done: function() {
+			delete window.onYouTubeIframeAPIReady;
+
+			while(this.listeners.length) {
+				this.listeners.pop()(window.YT);
+			}
+		}
+	};
+
+	if(typeof module !== 'undefined' && module.exports) {
+		module.exports = YouTubeIframeLoader;
+	} else {
+		window.YouTubeIframeLoader = YouTubeIframeLoader;
+	}
+}(window));
+
+},{}],"src/app.ts":[function(require,module,exports) {
 "use strict";
 
-var _ = _interopRequireWildcard(require("lodash"));
+var _lodash = _interopRequireDefault(require("lodash"));
 
-var _gsap = require("gsap");
+var _gsap = _interopRequireDefault(require("gsap"));
 
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
+// import Swiper from "swiper";
 // import { Swiper, SwiperOptions } from "swiper";
 // Search
 var searchEl = document.querySelector(".search");
@@ -24889,14 +24940,14 @@ serchInputEl.addEventListener("blur", function () {
 }); // Badge
 
 var badgeEl = document.querySelector(".badges");
-window.addEventListener("scroll", _.throttle(function () {
+window.addEventListener("scroll", _lodash.default.throttle(function () {
   if (window.scrollY > 500) {
-    _gsap.gsap.to(badgeEl, 0.6, {
+    _gsap.default.to(badgeEl, 0.6, {
       opacity: 0,
       display: "none"
     });
   } else {
-    _gsap.gsap.to(badgeEl, 0.6, {
+    _gsap.default.to(badgeEl, 0.6, {
       opacity: 1,
       display: "block"
     });
@@ -24905,11 +24956,11 @@ window.addEventListener("scroll", _.throttle(function () {
 
 var fadeEls = document.querySelectorAll(".visual .fade-in");
 fadeEls.forEach(function (fadeEl, index) {
-  _gsap.gsap.to(fadeEl, 1, {
+  _gsap.default.to(fadeEl, 1, {
     delay: (index + 1) * 0.7,
     opacity: 1
   });
-}); // toggle
+}); // Toggle
 
 var promotionEl = document.querySelector(".promotion");
 var promotionToggleBtn = document.querySelector(".toggle-promotion");
@@ -24922,8 +24973,26 @@ promotionToggleBtn.addEventListener("click", function () {
   } else {
     promotionEl.classList.remove("hide");
   }
+}); // Youtube
+
+var YouTubeIframeLoader = require("youtube-iframe");
+
+YouTubeIframeLoader.load(function (YT) {
+  new YT.Player("player", {
+    videoId: "An6LvWQuj_8",
+    playerVars: {
+      autoplay: true,
+      loop: true,
+      playlist: "An6LvWQuj_8"
+    },
+    events: {
+      onReady: function onReady(event) {
+        event.target.mute();
+      }
+    }
+  });
 });
-},{"lodash":"node_modules/lodash/lodash.js","gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"lodash":"node_modules/lodash/lodash.js","gsap":"node_modules/gsap/index.js","youtube-iframe":"node_modules/youtube-iframe/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -24951,7 +25020,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56169" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50707" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

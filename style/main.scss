@@ -564,3 +564,45 @@ header {
     right: 0;
   }
 }
+
+// YOUTUbe
+.youtube {
+  position: relative;
+  height: 700px;
+  background-color: $main-font;
+  overflow: hidden;
+  .youtube__area {
+    position: absolute;
+    width: 1920px;
+    background-color: orange;
+    left: 50%;
+    margin-left: calc(1920px / -2);
+    top: 50%;
+    margin-top: calc(1920px * 9 / 16 / -2);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 0;
+      padding-top: 56.25%;
+    }
+  }
+  .youtube__cover {
+    background-image: url("../images/video_cover_pattern.png");
+    background-color: rgba($color: $real-black, $alpha: 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  #player {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

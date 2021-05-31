@@ -17,7 +17,9 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
+    "@types/youtube": "^0.0.42",
     "gsap": "^3.6.1",
-    "swiper": "^6.6.2"
+    "swiper": "^6.6.2",
+    "youtube-iframe": "^1.0.3"
   }
 }
