@@ -687,3 +687,33 @@ header {
     }
   }
 }
+
+// PICK YOUR FAVORITE
+.pick-your-favorite {
+  background-image: url("../images/favorite_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  .inner {
+    padding: 110px 0;
+    .text-group {
+      margin-left: 100px;
+      display: flex;
+      width: 362px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      .title {
+        margin-bottom: 40px;
+      }
+      .description {
+        margin-bottom: 40px;
+      }
+
+      .more {
+        .btn {
+        }
+      }
+    }
+  }
+}

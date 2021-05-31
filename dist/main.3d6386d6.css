@@ -580,4 +580,28 @@ header .badges .badge {
   right: 0;
 }
 
+.pick-your-favorite {
+  background-image: url("/favorite_bg.3da08507.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.pick-your-favorite .inner {
+  padding: 110px 0;
+}
+.pick-your-favorite .inner .text-group {
+  margin-left: 100px;
+  display: flex;
+  width: 362px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.pick-your-favorite .inner .text-group .title {
+  margin-bottom: 40px;
+}
+.pick-your-favorite .inner .text-group .description {
+  margin-bottom: 40px;
+}
+
 /*# sourceMappingURL=/main.3d6386d6.css.map */
