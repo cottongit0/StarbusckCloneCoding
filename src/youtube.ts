@@ -1,4 +1,6 @@
-let YouTubeIframeLoader = require("youtube-iframe");
+import YouTubeIframeLoader from "youtube-iframe";
+
+// let YouTubeIframeLoader = require("youtube-iframe");
 
 YouTubeIframeLoader.load(function (YT) {
   new YT.Player("player", {

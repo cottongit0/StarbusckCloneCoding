@@ -1,6 +1,7 @@
 import _ from "lodash";
-import gsap from "gsap";
+import gsap, { Power1 } from "gsap";
 import { CSSSelector } from "swiper/types/shared";
+import * as ScrollMagic from "scrollmagic";
 
 // Search
 const searchEl = document.querySelector(".search")! as HTMLElement;
@@ -70,7 +71,7 @@ function random(min: number, max: number): number {
 }
 
 function floatingObject(selector: CSSSelector, delay: number, size: number) {
-  gsap.to(selector, random(1.5, 2.5), {
+  gsap.to(selector, random(1, 2), {
     y: size,
     repeat: -1,
     yoyo: true,
@@ -79,5 +80,16 @@ function floatingObject(selector: CSSSelector, delay: number, size: number) {
   });
 }
 floatingObject(".floating1", 1, 15);
-floatingObject(".floating2", 0.5, 15);
+floatingObject(".floating2", 0.8, 15);
 floatingObject(".floating3", 1.5, 20);
+
+// Scroll spy
+const spyEls = document.querySelectorAll<HTMLElement>("section.scroll-spy");
+spyEls.forEach((spyEl) => {
+  new ScrollMagic.Scene({
+    triggerElement: spyEl,
+    triggerHook: 0.8,
+  })
+    .setClassToggle(spyEl, "show")
+    .addTo(new ScrollMagic.Controller());
+});

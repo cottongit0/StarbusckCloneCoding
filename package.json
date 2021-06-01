@@ -19,6 +19,7 @@
   "dependencies": {
     "@types/youtube": "^0.0.42",
     "gsap": "^3.6.1",
+    "scrollmagic": "^2.0.8",
     "swiper": "^6.6.2",
     "youtube-iframe": "^1.0.3"
   }

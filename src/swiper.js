@@ -1,5 +1,3 @@
-// import Swiper from "swiper";
-
 new Swiper(".notice-line .swiper-container", {
   loop: true,
   autoplay: true,
@@ -21,5 +19,16 @@ new Swiper(".promotion .swiper-container", {
   navigation: {
     prevEl: ".promotion .swiper-prev",
     nextEl: ".promotion .swiper-next",
+  },
+});
+
+new Swiper(".awards .swiper-container", {
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+  autoplay: true,
+  navigation: {
+    prevEl: ".awards .swiper-prev",
+    nextEl: ".awards .swiper-next",
   },
 });
