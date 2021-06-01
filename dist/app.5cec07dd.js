@@ -28027,7 +28027,10 @@ spyEls.forEach(function (spyEl) {
     triggerElement: spyEl,
     triggerHook: 0.8
   }).setClassToggle(spyEl, "show").addTo(new ScrollMagic.Controller());
-});
+}); // Copy right - year
+
+var year = document.querySelector(".copyright .this-year");
+year.textContent = "".concat(new Date().getFullYear());
 },{"lodash":"node_modules/lodash/lodash.js","gsap":"node_modules/gsap/index.js","scrollmagic":"node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

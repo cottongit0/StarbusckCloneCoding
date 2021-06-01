@@ -84,6 +84,7 @@ floatingObject(".floating2", 0.8, 15);
 floatingObject(".floating3", 1.5, 20);
 
 // Scroll spy
+
 const spyEls = document.querySelectorAll<HTMLElement>("section.scroll-spy");
 spyEls.forEach((spyEl) => {
   new ScrollMagic.Scene({
@@ -93,3 +94,8 @@ spyEls.forEach((spyEl) => {
     .setClassToggle(spyEl, "show")
     .addTo(new ScrollMagic.Controller());
 });
+
+// Copy right - year
+
+const year = document.querySelector(".copyright .this-year")! as HTMLElement;
+year.textContent = `${new Date().getFullYear()}`;
