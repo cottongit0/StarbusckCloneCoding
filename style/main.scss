@@ -647,8 +647,6 @@ header {
       top: -200px;
       right: 0;
     }
-    .product {
-    }
     .text-group {
       position: absolute;
       top: 120px;
@@ -926,4 +924,22 @@ footer {
       }
     }
   }
+}
+
+// TOP
+#to-top {
+  width: 42px;
+  height: 42px;
+  background-color: $main-font;
+  color: $real-white;
+  border: 2px solid $real-white;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10;
 }

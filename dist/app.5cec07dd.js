@@ -27965,19 +27965,28 @@ serchInputEl.addEventListener("focus", function () {
 serchInputEl.addEventListener("blur", function () {
   searchEl.classList.remove("focused");
   serchInputEl.setAttribute("placeholder", "");
-}); // Badge
+}); // Badge and Top
 
 var badgeEl = document.querySelector(".badges");
+var toTopEl = document.querySelector("#to-top");
 window.addEventListener("scroll", _lodash.default.throttle(function () {
   if (window.scrollY > 500) {
     _gsap.default.to(badgeEl, 0.6, {
       opacity: 0,
       display: "none"
     });
+
+    _gsap.default.to(toTopEl, 0.2, {
+      x: 0
+    });
   } else {
     _gsap.default.to(badgeEl, 0.6, {
       opacity: 1,
       display: "block"
+    });
+
+    _gsap.default.to(toTopEl, 0.2, {
+      x: 100
     });
   }
 }, 300)); // Visual

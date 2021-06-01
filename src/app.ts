@@ -2,6 +2,7 @@ import _ from "lodash";
 import gsap, { Power1 } from "gsap";
 import { CSSSelector } from "swiper/types/shared";
 import * as ScrollMagic from "scrollmagic";
+import { ScrollToPlugin } from "gsap/all";
 
 // Search
 const searchEl = document.querySelector(".search")! as HTMLElement;
@@ -19,8 +20,9 @@ serchInputEl.addEventListener("blur", () => {
   serchInputEl.setAttribute("placeholder", "");
 });
 
-// Badge
+// Badge and Top
 const badgeEl = document.querySelector(".badges")! as HTMLElement;
+const toTopEl = document.querySelector("#to-top")! as HTMLElement;
 
 window.addEventListener(
   "scroll",
@@ -30,10 +32,16 @@ window.addEventListener(
         opacity: 0,
         display: "none",
       });
+      gsap.to(toTopEl, 0.2, {
+        x: 0,
+      });
     } else {
       gsap.to(badgeEl, 0.6, {
         opacity: 1,
         display: "block",
+      });
+      gsap.to(toTopEl, 0.2, {
+        x: 100,
       });
     }
   }, 300)
