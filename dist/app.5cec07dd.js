@@ -24861,7 +24861,7 @@ TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 exports.TweenMax = TweenMaxWithCSS;
 exports.default = exports.gsap = gsapWithCSS;
-},{"./gsap-core.js":"node_modules/gsap/gsap-core.js","./CSSPlugin.js":"node_modules/gsap/CSSPlugin.js"}],"node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js":[function(require,module,exports) {
+},{"./gsap-core.js":"node_modules/gsap/gsap-core.js","./CSSPlugin.js":"node_modules/gsap/CSSPlugin.js"}],"node_modules/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js":[function(require,module,exports) {
 var define;
 /*!
  * ScrollMagic v2.0.8 (2020-08-14)
@@ -27944,7 +27944,7 @@ var _lodash = _interopRequireDefault(require("lodash"));
 
 var _gsap = _interopRequireWildcard(require("gsap"));
 
-var ScrollMagic = _interopRequireWildcard(require("scrollmagic"));
+var ScrollMagic = _interopRequireWildcard(require("ScrollMagic"));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -27952,6 +27952,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import { ScrollToPlugin } from "gsap/all";
 // Search
 var searchEl = document.querySelector(".search");
 var serchInputEl = searchEl.querySelector("input");
@@ -27989,7 +27990,12 @@ window.addEventListener("scroll", _lodash.default.throttle(function () {
       x: 100
     });
   }
-}, 300)); // Visual
+}, 300));
+toTopEl.addEventListener("click", function () {
+  _gsap.default.to(window, 0.7, {
+    scrollTo: 0
+  });
+}); // Visual
 
 var fadeEls = document.querySelectorAll(".visual .fade-in");
 fadeEls.forEach(function (fadeEl, index) {
@@ -28040,7 +28046,7 @@ spyEls.forEach(function (spyEl) {
 
 var year = document.querySelector(".copyright .this-year");
 year.textContent = "".concat(new Date().getFullYear());
-},{"lodash":"node_modules/lodash/lodash.js","gsap":"node_modules/gsap/index.js","scrollmagic":"node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"lodash":"node_modules/lodash/lodash.js","gsap":"node_modules/gsap/index.js","ScrollMagic":"node_modules/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -28068,7 +28074,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58649" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57606" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

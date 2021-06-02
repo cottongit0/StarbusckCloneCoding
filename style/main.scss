@@ -44,7 +44,6 @@ body {
   }
 }
 
-// COMMON - BTN
 .btn {
   $btn-grey: #333;
   $btn-brown: #592b18;
@@ -106,6 +105,29 @@ body {
     &:hover {
       color: $btn-grey;
       background-color: $btn-white;
+    }
+  }
+}
+
+.back-to-position {
+  opacity: 0;
+  transition: 1s;
+  &.to-right {
+    transform: translateX((-150px));
+  }
+  &.to-left {
+    transform: translateX((150px));
+  }
+}
+
+.show {
+  .back-to-position {
+    opacity: 1;
+    transform: translateX(0);
+    @for $i from 0 through 3 {
+      &.delay-#{$i} {
+        transition-delay: #{$i * 0.3}s;
+      }
     }
   }
 }

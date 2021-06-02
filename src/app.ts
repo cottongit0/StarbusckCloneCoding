@@ -1,8 +1,8 @@
 import _ from "lodash";
 import gsap, { Power1 } from "gsap";
 import { CSSSelector } from "swiper/types/shared";
-import * as ScrollMagic from "scrollmagic";
-import { ScrollToPlugin } from "gsap/all";
+import * as ScrollMagic from "ScrollMagic";
+// import { ScrollToPlugin } from "gsap/all";
 
 // Search
 const searchEl = document.querySelector(".search")! as HTMLElement;
@@ -46,6 +46,12 @@ window.addEventListener(
     }
   }, 300)
 );
+
+toTopEl.addEventListener("click", () => {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  });
+});
 
 // Visual
 const fadeEls = document.querySelectorAll<HTMLElement>(".visual .fade-in");
