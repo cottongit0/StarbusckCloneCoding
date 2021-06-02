@@ -1,8 +1,8 @@
 import _ from "lodash";
-import gsap, { Power1 } from "gsap";
+import gsap, { Power1 } from "gsap/all";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { CSSSelector } from "swiper/types/shared";
 import * as ScrollMagic from "ScrollMagic";
-// import { ScrollToPlugin } from "gsap/all";
 
 // Search
 const searchEl = document.querySelector(".search")! as HTMLElement;
@@ -49,7 +49,12 @@ window.addEventListener(
 
 toTopEl.addEventListener("click", () => {
   gsap.to(window, 0.7, {
-    scrollTo: 0,
+    ScrollTop() {
+      scroll({
+        top: 0,
+        behavior: "smooth",
+      });
+    },
   });
 });
 
