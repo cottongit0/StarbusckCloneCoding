@@ -833,6 +833,7 @@ footer .inner .copyright .logo {
 }
 
 #to-top {
+  display: none;
   width: 42px;
   height: 42px;
   background-color: #333;
@@ -840,7 +841,6 @@ footer .inner .copyright .logo {
   border: 2px solid #fff;
   border-radius: 10px;
   cursor: pointer;
-  display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;

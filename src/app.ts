@@ -1,6 +1,5 @@
 import _ from "lodash";
 import gsap, { Power1 } from "gsap/all";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { CSSSelector } from "swiper/types/shared";
 import * as ScrollMagic from "ScrollMagic";
 
@@ -34,6 +33,7 @@ window.addEventListener(
       });
       gsap.to(toTopEl, 0.2, {
         x: 0,
+        display: "flex",
       });
     } else {
       gsap.to(badgeEl, 0.6, {
@@ -42,11 +42,13 @@ window.addEventListener(
       });
       gsap.to(toTopEl, 0.2, {
         x: 100,
+        display: "flex",
       });
     }
   }, 300)
 );
 
+// 임시 scroll to plugin
 toTopEl.addEventListener("click", () => {
   gsap.to(window, 0.7, {
     ScrollTop() {
@@ -86,7 +88,7 @@ promotionToggleBtn.addEventListener("click", () => {
 // youtube - icons
 
 function random(min: number, max: number): number {
-  return parseFloat(Math.random() * (max - min) + min.toFixed(2));
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2));
 }
 
 function floatingObject(selector: CSSSelector, delay: number, size: number) {
@@ -99,7 +101,7 @@ function floatingObject(selector: CSSSelector, delay: number, size: number) {
   });
 }
 floatingObject(".floating1", 1, 15);
-floatingObject(".floating2", 0.8, 15);
+floatingObject(".floating2", 0.5, 15);
 floatingObject(".floating3", 1.5, 20);
 
 // Scroll spy

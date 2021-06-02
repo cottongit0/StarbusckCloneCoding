@@ -950,6 +950,7 @@ footer {
 
 // TOP
 #to-top {
+  display: none;
   width: 42px;
   height: 42px;
   background-color: $main-font;
@@ -957,7 +958,7 @@ footer {
   border: 2px solid $real-white;
   border-radius: 10px;
   cursor: pointer;
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;

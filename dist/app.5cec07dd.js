@@ -36627,7 +36627,8 @@ window.addEventListener("scroll", _lodash.default.throttle(function () {
     });
 
     _all.default.to(toTopEl, 0.2, {
-      x: 0
+      x: 0,
+      display: "flex"
     });
   } else {
     _all.default.to(badgeEl, 0.6, {
@@ -36636,10 +36637,12 @@ window.addEventListener("scroll", _lodash.default.throttle(function () {
     });
 
     _all.default.to(toTopEl, 0.2, {
-      x: 100
+      x: 100,
+      display: "flex"
     });
   }
-}, 300));
+}, 300)); // 임시 scroll to plugin
+
 toTopEl.addEventListener("click", function () {
   _all.default.to(window, 0.7, {
     ScrollTop: function ScrollTop() {
@@ -36673,7 +36676,7 @@ promotionToggleBtn.addEventListener("click", function () {
 }); // youtube - icons
 
 function random(min, max) {
-  return parseFloat(Math.random() * (max - min) + min.toFixed(2));
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2));
 }
 
 function floatingObject(selector, delay, size) {
@@ -36687,7 +36690,7 @@ function floatingObject(selector, delay, size) {
 }
 
 floatingObject(".floating1", 1, 15);
-floatingObject(".floating2", 0.8, 15);
+floatingObject(".floating2", 0.5, 15);
 floatingObject(".floating3", 1.5, 20); // Scroll spy
 
 var spyEls = document.querySelectorAll("section.scroll-spy");
@@ -36728,7 +36731,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57606" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62545" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

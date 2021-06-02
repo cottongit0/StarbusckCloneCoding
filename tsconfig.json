@@ -70,10 +70,10 @@
     "forceConsistentCasingInFileNames": true,        /* Disallow inconsistently-cased references to the same file. */
   },
   "files": [
+    "node_modules/@types/swiper/index.d.ts",
     "node_modules/gsap/types/index.d.ts",
     "node_modules/youtube-iframe/index.d.ts",
-    "node_modules/swiper/swiper.d.ts",
-    "node_modules/@types/scrollmagic/ScrollMagic/index.d.ts",
+    // "node_modules/swiper/swiper.d.ts",
     "node_modules/gsap/types/ease.d.ts",
   ]
 }
