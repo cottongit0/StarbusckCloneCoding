@@ -120,3 +120,28 @@ spyEls.forEach((spyEl) => {
 
 const year = document.querySelector(".copyright .this-year")! as HTMLElement;
 year.textContent = `${new Date().getFullYear()}`;
+
+// Toggle
+const toggleEl = document.querySelector(
+  ".responsive-menu .material-icons.toggle"
+)! as HTMLElement;
+
+const toggleSlide = document.querySelector(
+  ".toggle-menu-wrap"
+)! as HTMLDivElement;
+
+toggleEl.addEventListener("click", () => {
+  gsap.to(toggleSlide, 0.3, {
+    width: "70%",
+  });
+  console.log("클릭");
+});
+
+const closeEl = document.querySelector(
+  ".toggle-menu-wrap .material-icons.close"
+)! as HTMLAnchorElement;
+closeEl.addEventListener("click", () => {
+  gsap.to(toggleSlide, 0.3, {
+    width: "0%",
+  });
+});
